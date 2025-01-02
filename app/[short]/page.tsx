@@ -1,21 +1,25 @@
 import { PrismaClient } from '@prisma/client';
 import { redirect } from 'next/navigation';
-import { NextPage } from 'next';
+import type { Metadata, ResolvingMetadata } from 'next';
 
 const prisma = new PrismaClient();
 
-export async function generateMetadata() {
+type Props = {
+  params: Promise<{ short: string }>
+}
+
+export async function generateMetadata(
+  { params }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
   return {
     title: 'Redirecting',
   };
 }
 
-type Params = {
-  short: string;
-};
-
-const ShortUrlPage: NextPage<{ params: Params }> = async ({ params }) => {
-  const { short } = params;
+export default async function ShortUrlPage({ params }: Props,
+  parent: ResolvingMetadata) {
+  const { short } = await params;
 
   // Fetch the original URL from the database using Prisma
   const link = await prisma.shortUrl.update({
@@ -43,5 +47,3 @@ const ShortUrlPage: NextPage<{ params: Params }> = async ({ params }) => {
     </div>
   );
 }
-
-export default ShortUrlPage;
