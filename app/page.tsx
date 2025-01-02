@@ -73,7 +73,7 @@ export default function Home() {
     <div>
       <div className='w-full flex bg-black justify-center gap-8 absolute top-0 left-0'>
         <div className='border-2 border-fuchsia-500 z-10'>
-          <button type='button' className={`p-4 ${activeShortner ? 'bg-fuchsia-500' : 'bg-transparent'}`} onClick={() => setActiveShortner(true)}>URL Shortner</button>
+          <button type='button' className={`p-4 ${activeShortner ? 'bg-fuchsia-500' : 'bg-transparent'}`} onClick={() => setActiveShortner(true)}>URL Shortener</button>
           <button type='button' className={`p-4 ${!activeShortner ? 'bg-fuchsia-500' : 'bg-transparent'}`} onClick={() => setActiveShortner(false)}>Short URL Info</button>
         </div>
       </div>
