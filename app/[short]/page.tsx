@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { redirect } from 'next/navigation';
-import type { Metadata, ResolvingMetadata } from 'next';
+import type { Metadata } from 'next';
 
 const prisma = new PrismaClient();
 
@@ -8,16 +8,13 @@ type Props = {
   params: Promise<{ short: string }>
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: 'Redirecting',
   };
 }
 
-export default async function ShortUrlPage({ params }: Props) {
+export default async function ShortUrlPage({ params }: Readonly<Props>) {
   const short = (await params).short;
 
   // Fetch the original URL from the database using Prisma
