@@ -9,7 +9,7 @@ export async function generateMetadata() {
   };
 }
 
-export default async function ShortUrlPage({ params }: { params: { short: string } }) {
+export default async function ShortUrlPage({ params }: Readonly<{ params: { short: string } }>) {
   const { short } = params;
 
   // Fetch the original URL from the database using Prisma
