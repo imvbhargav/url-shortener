@@ -4,11 +4,10 @@ import ShortURLInfoForm from '@/components/ShortURLInfoForm';
 import { useState } from 'react';
 
 export default function Home() {
-  const divs = Array.from({ length: 1999 }, (_, i) => i + 1);
 
   const [url, setUrl] = useState('');
   const [views, setViews] = useState(0);
-  const [loading, setLoading] = useState<Boolean>(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [shortUrl, setShortUrl] = useState('');
   const [copy, setCopy] = useState("Copy link!");
   const [activeShortner, setActiveShortner] = useState<boolean>(true);
