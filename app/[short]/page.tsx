@@ -17,9 +17,8 @@ export async function generateMetadata(
   };
 }
 
-export default async function ShortUrlPage({ params }: Props,
-  parent: ResolvingMetadata) {
-  const { short } = await params;
+export default async function ShortUrlPage({ params }: Props) {
+  const short = (await params).short;
 
   // Fetch the original URL from the database using Prisma
   const link = await prisma.shortUrl.update({
