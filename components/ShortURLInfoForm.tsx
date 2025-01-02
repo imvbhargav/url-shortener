@@ -1,14 +1,13 @@
 interface ShortURLInfoFormProps {
-  loading: Boolean;
+  loading: boolean;
   shortUrl: string;
   url: string;
   views: number;
   handleSubmit: (e: React.FormEvent) => void;
-  setUrl: React.Dispatch<React.SetStateAction<string>>;
   setShortUrl: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function ShortURLInfoForm({loading, shortUrl, url, views, handleSubmit, setShortUrl}: ShortURLInfoFormProps) {
+function ShortURLInfoForm({loading, shortUrl, url, views, handleSubmit, setShortUrl}: Readonly<ShortURLInfoFormProps>) {
   const divs = Array.from({ length: 1999 }, (_, i) => i + 1);
   return (
     <div className="w-full h-screen flex justify-center wrapper">
