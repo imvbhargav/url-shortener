@@ -5,6 +5,10 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --fusia-rgb: 217 70 239;
+  --teal-rgb: 20 184 166;
+  --blue-rgb: 59 130 246;
+  --pink-rgb: 236 72 153;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,7 +19,90 @@
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111;
+  font-family: 'Space Grotesk';
+  position: relative;
+}
+
+.wrapper {
+  background: radial-gradient(transparent 0%, black);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.animationGrid {
+  transform: rotateX(50deg) rotateY(-5deg) rotateZ(20deg) scale(1.25);
+  height: 150vh;
+  width: 150vw;
+  opacity: 0.8;
+}
+
+.no-rotate {
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1);
+}
+
+.animationGrid > div {
+  transition-duration: 1500ms;
+}
+
+.animationGrid > div:hover {
+  background-color: var(--variable-bg-color);
+  transition-duration: 0ms;
+}
+
+.tile:nth-child(4n):hover {
+  background-color: rgb(var(--fusia-rgb));
+}
+
+.tile:nth-child(4n + 1):hover {
+  background-color: rgb(var(--teal-rgb));
+}
+
+.tile:nth-child(4n + 2):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(4n + 3):hover {
+  background-color: rgb(var(--pink-rgb));
+}
+
+.tile:nth-child(7n):hover {
+  background-color: rgb(var(--teal-rgb));
+}
+
+.tile:nth-child(7n + 3):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(7n + 5):hover {
+  background-color: rgb(var(--pink-rgb));
+}
+
+.tile:nth-child(7n + 6):hover {
+  background-color: rgb(var(--fusia-rgb));
+}
+
+.tile:nth-child(11n + 1):hover {
+  background-color: rgb(var(--fusia-rgb));
+}
+
+.tile:nth-child(11n + 4):hover {
+  background-color: rgb(var(--teal-rgb));
+}
+
+.tile:nth-child(11n + 7):hover {
+  background-color: rgb(var(--blue-rgb));
+}
+
+.tile:nth-child(11n + 10):hover {
+  background-color: rgb(var(--pink-rgb));
 }
