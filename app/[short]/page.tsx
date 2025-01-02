@@ -15,7 +15,7 @@ type ShortUrlPageProps = {
   };
 };
 
-export default async function ShortUrlPage({ params }: Readonly<ShortUrlPageProps>) {
+export default async function ShortUrlPage({ params }: any) {
   const { short } = params;
 
   // Fetch the original URL from the database using Prisma

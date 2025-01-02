@@ -77,10 +77,10 @@ export default function Home() {
         </div>
       </div>
       {activeShortner &&
-        < URLShortnerForm loading={loading} shortUrl={shortUrl} url={url} copy={copy} copyLink={copyLink} handleSubmit={handleSubmit} setUrl={setUrl} setShortUrl={setShortUrl} />
+        < URLShortnerForm loading={loading} shortUrl={shortUrl} url={url} copy={copy} copyLink={copyLink} handleSubmit={handleSubmit} setUrl={setUrl} />
       } {!activeShortner &&
         <div>
-          < ShortURLInfoForm loading={loading} shortUrl={shortUrl} url={url} views={views} handleSubmit={handleInfoSubmit} setUrl={setUrl} setShortUrl={setShortUrl} />
+          < ShortURLInfoForm loading={loading} shortUrl={shortUrl} url={url} views={views} handleSubmit={handleInfoSubmit} setShortUrl={setShortUrl} />
         </div>
       }
     </div>

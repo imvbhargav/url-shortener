@@ -8,7 +8,7 @@ interface URLShortnerFormProps {
   setUrl: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function URLShortnerForm({loading, url, shortUrl, copy, handleSubmit, copyLink, setUrl}: Readonly<URLShortnerFormProps>) {
+function URLShortnerForm({loading, url, shortUrl, copy, handleSubmit, copyLink, setUrl}: URLShortnerFormProps) {
   const divs = Array.from({ length: 1999 }, (_, i) => i + 1);
   return (
     <div className="w-full h-screen flex justify-center wrapper">
