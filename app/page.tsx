@@ -1,4 +1,5 @@
-'use client';
+"use client";
+
 import URLShortnerForm from '@/components/URLShortnerForm';
 import ShortURLInfoForm from '@/components/ShortURLInfoForm';
 import { useState } from 'react';
