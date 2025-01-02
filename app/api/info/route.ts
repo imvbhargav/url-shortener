@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export async function POST(req: NextRequest) {
   const { shortUrl } = await req.json();
   const urlParts = shortUrl.split('://');
-  let baseURL = urlParts.length > 1 ? urlParts[1] : urlParts[0] ;
+  const baseURL = urlParts.length > 1 ? urlParts[1] : urlParts[0] ;
   const shortParts = baseURL.split('/');
   const short = shortParts.length > 1 ? shortParts[1] : shortParts[0];
   const possibleInvalid = baseURL.split('/')[2];
