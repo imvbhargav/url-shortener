@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client';
 import { redirect } from 'next/navigation';
+import { NextPage } from 'next';
 
 const prisma = new PrismaClient();
 
@@ -9,7 +10,11 @@ export async function generateMetadata() {
   };
 }
 
-export default async function ShortUrlPage({ params }: any) {
+type Params = {
+  short: string;
+};
+
+const ShortUrlPage: NextPage<{ params: Params }> = async ({ params }) => {
   const { short } = params;
 
   // Fetch the original URL from the database using Prisma
@@ -38,3 +43,5 @@ export default async function ShortUrlPage({ params }: any) {
     </div>
   );
 }
+
+export default ShortUrlPage;
