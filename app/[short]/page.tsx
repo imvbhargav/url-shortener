@@ -9,12 +9,6 @@ export async function generateMetadata() {
   };
 }
 
-type ShortUrlPageProps = {
-  params: {
-    short: string;
-  };
-};
-
 export default async function ShortUrlPage({ params }: any) {
   const { short } = params;
 
