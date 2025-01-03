@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Sniplnk: URL Shortener',
   description: 'Snip and shorten any link.',
   icons: {
-    icon: '/icon.ico',
+    icon: '/favicon.ico',
   },
 };
 

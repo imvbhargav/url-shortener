@@ -105,3 +105,10 @@ body {
 .tile:nth-child(11n + 10):hover {
   background-color: rgb(var(--pink-rgb));
 }
+
+@media only screen and (min-width: 1600px) {
+  .tile {
+    width: 5rem;
+    height: 5rem;
+  }
+}
