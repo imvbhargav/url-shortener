@@ -1,3 +1,5 @@
+import BoxEffect from "./BoxEffect";
+
 interface ShortURLInfoFormProps {
   loading: boolean;
   shortUrl: string;
@@ -7,17 +9,10 @@ interface ShortURLInfoFormProps {
   setShortUrl: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function ShortURLInfoForm({loading, shortUrl, url, views, handleSubmit, setShortUrl}: ShortURLInfoFormProps) {
-  const divs = Array.from({ length: 1999 }, (_, i) => i + 1);
+function ShortURLInfoForm({loading, shortUrl, url, views, handleSubmit, setShortUrl}: Readonly<ShortURLInfoFormProps>) {
   return (
     <div className="w-full h-screen flex justify-center wrapper">
-      <div className='w-full h-full absolute top-0 left-0 overflow-hidden'>
-        <div className='animationGrid flex flex-wrap absolute top-[-12em] left-0'>
-          {divs.map((num) => (
-            <div key={num} className='w-10 h-10 border-[1px] border-zinc-500/10 tile'></div>
-          ))}
-        </div>
-      </div>
+      <BoxEffect />
       <div className='w-full flex flex-col items-center mt-20'>
         <h1 className='text-blue-500 font-black text-5xl text-center z-10'>Short URL Info</h1>
         <form onSubmit={handleSubmit} className='bg-black flex justify-between items-center text-sm sm:text-2xl w-[95%] max-w-[720px] font-black rounded-full overflow-hidden mt-24 hover:border-pink-500 border-2 border-blue-500 transition-all duration-250 z-10'>
